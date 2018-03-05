@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 
 export default (initialState: any) => {
   const store = createStore(
-    () => {},
+    () => ({}),
     initialState,
     composeWithDevTools(
       applyMiddleware(thunk),

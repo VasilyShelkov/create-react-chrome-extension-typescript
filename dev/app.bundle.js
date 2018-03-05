@@ -65,6 +65,26 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/app/index.css":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader?{"importLoaders":1}!./node_modules/postcss-loader/lib?{"ident":"postcss","plugins":[null,null]}!./src/app/index.css ***!
+  \*****************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-header {\n  background-color: #222;\n  height: 50px;\n  padding: 20px;\n  color: white;\n}\n\n.App-title {\n  font-size: 1.5em;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@-webkit-keyframes App-logo-spin {\n  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@keyframes App-logo-spin {\n  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\"}!./src/chrome/extension/app.css":
 /*!******************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader?{"importLoaders":1}!./node_modules/postcss-loader/lib?{"ident":"postcss"}!./src/chrome/extension/app.css ***!
@@ -21981,6 +22001,42 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
+/***/ "./src/app/index.css":
+/*!***************************!*\
+  !*** ./src/app/index.css ***!
+  \***************************/
+/*! dynamic exports provided */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./index.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/app/index.css");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib/index.js??postcss!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib/index.js??postcss!./index.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "./src/app/index.tsx":
 /*!***************************!*\
   !*** ./src/app/index.tsx ***!
@@ -21993,12 +22049,21 @@ module.exports = function(originalModule) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_css__ = __webpack_require__(/*! ./index.css */ "./src/app/index.css");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__index_css__);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function (_a) {
     var store = _a.store;
     return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_redux__["a" /* Provider */], { store: store },
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null, "hello World Vasily, this is my chrome extension in typescript !!!")));
+        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: "App" },
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("header", { className: "App-header" },
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("h1", { className: "App-title" }, "Welcome to React Typescript")),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", { className: "App-intro" },
+                "To get started, edit ",
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("code", null, "src/index.ts"),
+                " and save to reload."))));
 });
 
 
@@ -22023,7 +22088,7 @@ module.exports = function(originalModule) {
 
 // import rootReducer from './rootReducer';
 /* harmony default export */ __webpack_exports__["a"] = (function (initialState) {
-    var store = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["createStore"])(function () { }, initialState, Object(__WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension_developmentOnly__["composeWithDevTools"])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["applyMiddleware"])(__WEBPACK_IMPORTED_MODULE_2_redux_thunk___default.a)));
+    var store = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["createStore"])(function () { return ({}); }, initialState, Object(__WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension_developmentOnly__["composeWithDevTools"])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["applyMiddleware"])(__WEBPACK_IMPORTED_MODULE_2_redux_thunk___default.a)));
     return store;
 });
 
