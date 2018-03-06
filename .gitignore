@@ -39,3 +39,5 @@ typings/
 *.zip
 *.crx
 *.pem
+
+dev/*

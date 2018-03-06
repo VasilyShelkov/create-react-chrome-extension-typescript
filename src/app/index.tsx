@@ -10,6 +10,7 @@ export default ({ store }: Props) => (
   <Provider store={store}>
       <div className="App">
         <header className="App-header">
+          <img src="typescript-logo.png" width="30" />
           <h1 className="App-title">Welcome to React Typescript</h1>
         </header>
         <p className="App-intro">
