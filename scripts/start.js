@@ -11,7 +11,6 @@ process.on('unhandledRejection', err => {
 
 const webpack = require('webpack');
 const tasks = require('./tasks');
-const chalk = require('chalk');
 const config = require('../config/webpack.config.dev');
 const clearConsole = require('react-dev-utils/clearConsole');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
@@ -31,10 +30,6 @@ if (isInteractive) {
 console.log('[Copy assets]');
 console.log('-'.repeat(80));
 tasks.copyAssets('dev');
-
-console.log('[Webpack Dev]');
-console.log('-'.repeat(80));
-console.log('Load unpacked extensions with `./dev` folder. (see https://developer.chrome.com/extensions/getstarted#unpacked)\n');
 
 // Tools like Cloud9 rely on this.
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;

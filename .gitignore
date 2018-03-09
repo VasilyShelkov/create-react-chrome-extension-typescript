@@ -40,4 +40,6 @@ typings/
 *.crx
 *.pem
 
+# generated extension folders
 dev/*
+build/*

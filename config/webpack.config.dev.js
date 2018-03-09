@@ -1,6 +1,5 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
-
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ChromeExtensionReloader  = require('webpack-chrome-extension-reloader');
@@ -17,7 +16,7 @@ const env = getClientEnvironment('/');
 module.exports = (port) => ({
   devtool: 'cheap-module-source-map',
   entry: {
-    app: paths.appIndexTsx,
+    app: [require.resolve('./polyfills'), paths.appIndexTsx]
     // background: paths.backgroundJs,
   },
   output: {
@@ -26,7 +25,7 @@ module.exports = (port) => ({
     path: path.join(__dirname, '../dev'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
-    // Point sourcemap entries to original disk location (format as URL on Windows)
+    // point sourcemap entries to original disk location (format as url on windows)
     devtoolModuleFilenameTemplate: info =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
   },
@@ -35,19 +34,7 @@ module.exports = (port) => ({
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
-
-    extensions: [
-      '.mjs',
-      '.web.ts',
-      '.ts',
-      '.web.tsx',
-      '.tsx',
-      '.web.js',
-      '.js',
-      '.json',
-      '.web.jsx',
-      '.jsx',
-    ],
+    extensions: ['.mjs', '.web.ts', '.ts', '.web.tsx', '.tsx', '.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
@@ -219,11 +206,5 @@ module.exports = (port) => ({
     net: 'empty',
     tls: 'empty',
     child_process: 'empty',
-  },
-  // Turn off performance hints during development because we don't do any
-  // splitting or minification in interest of speed. These warnings become
-  // cumbersome.
-  performance: {
-    hints: false,
   },
 });

@@ -14,7 +14,7 @@ export default ({ store }: Props) => (
           <h1 className="App-title">Welcome to React Typescript</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/index.ts</code> and save to reload.
+          To get started, edit <code>src/index.ts</code> and save to reload now.
         </p>
       </div>
   </Provider>
