@@ -1,10 +1,10 @@
 {
   "version": "0.0.1",
-  "name": "create-react-chrome-extension-typescript",
+  "name": "dev-create-react-chrome-extension-typescript",
   "manifest_version": 2,
   "description": "Example for create-react-chrome-extension-typescript-boilerplate",
   "browser_action": {
-    "default_title": "React Chrome Extension Typescript",
+    "default_title": "DEV: React Chrome Extension Typescript",
     "default_popup": "popup.html"
   },
   "icons": {

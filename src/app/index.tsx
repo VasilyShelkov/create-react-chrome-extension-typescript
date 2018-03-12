@@ -8,14 +8,18 @@ interface Props {
 }
 export default ({ store }: Props) => (
   <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
-          <img src="typescript-logo.png" width="30" />
-          <h1 className="App-title">Welcome to React Typescript</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/index.ts</code> and save to reload now.
-        </p>
-      </div>
+    <App />
   </Provider>
 );
+
+export const App = () => (
+  <div className="App">
+    <header className="App-header">
+      <img src="typescript-logo.png" width="30" />
+      <h1 className="App-title">Welcome to React Typescript</h1>
+    </header>
+    <p className="App-intro">
+      To get started, edit <code>src/index.ts</code> and save to reload now.
+    </p>
+  </div>
+)
