@@ -1,4 +1,4 @@
-# WIP: Create React Chrome Extension Typescript
+# ~WIP: Create React Chrome Extension Typescript~ ARCHIVED: in favour of https://github.com/VasilyShelkov/create-react-extension
 
 Currently only boilerplate but intension is to be like Create-React-App but for building chrome extensions.
 
